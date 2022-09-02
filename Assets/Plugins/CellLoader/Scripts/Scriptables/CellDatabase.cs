@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Arcturus.MapLoader.Internal
 {
-    [CreateAssetMenu(fileName = "CellDatabase", menuName = "New CellDatabase")]
+    [CreateAssetMenu(fileName = "CellDatabase", menuName = "CellLoader/New CellDatabase")]
     public class CellDatabase : ScriptableObject
     {
         public List<Cell> cells;

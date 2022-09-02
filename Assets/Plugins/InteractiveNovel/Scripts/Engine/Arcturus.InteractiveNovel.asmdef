@@ -1,0 +1,16 @@
+{
+    "name": "Arcturus.InteractiveNovel",
+    "rootNamespace": "Arcturus.InteractiveNovel",
+    "references": [
+        "GUID:2940435a0476c6c4e909cec7fefe1656"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
