@@ -1,9 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Characters>
+	<!-- When linking graphics do NOT include file extension & start from inside resources folder. -->
 	<Character Name="Kuu" VoicePath="">
-		<!-- <Pose Name="" Path="Characters\KUUDERE\HEAD UP\casual\"/> -->
-		<Pose Name="UCNeutral" Path="Characters/KUUDERE/HEAD UP/casual/neutral"/>
+		<!-- Head Down Sprites -->
+		<Pose Name="DCNeutral" Path="Characters/KUUDERE/HEAD DOWN/casual/neutral"/>
 		<Pose Name="DCBlush" Path="Characters/KUUDERE/HEAD DOWN/casual/neutral blush"/>
+		<Pose Name="DCPerv" Path="Characters/KUUDERE/HEAD DOWN/casual/pervert"/>
+		<Pose Name="DCPissed" Path="Characters/KUUDERE/HEAD DOWN/casual/pissed"/>
+		<Pose Name="DCSmileBlush" Path="Characters/KUUDERE/HEAD DOWN/casual/smile blush"/>
+		<Pose Name="DCSmile" Path="Characters/KUUDERE/HEAD DOWN/casual/smile"/>
+		<Pose Name="DCSuperPerv" Path="Characters/KUUDERE/HEAD DOWN/casual/super pervert"/>
+		<!-- Head Up Sprites -->
+		<Pose Name="UCNeutral" Path="Characters/KUUDERE/HEAD UP/casual/neutral"/>
+		<Pose Name="UCBlush" Path="Characters/KUUDERE/HEAD UP/casual/neutral blush"/>
+		<Pose Name="UCPerv" Path="Characters/KUUDERE/HEAD UP/casual/pervert"/>
+		<Pose Name="UCPissed" Path="Characters/KUUDERE/HEAD UP/casual/pissed"/>
+		<Pose Name="UCSmileBlush" Path="Characters/KUUDERE/HEAD UP/casual/smile blush"/>
+		<Pose Name="UCSmile" Path="Characters/KUUDERE/HEAD UP/casual/smile"/>
+		<Pose Name="UCSuperPerv" Path="Characters/KUUDERE/HEAD UP/casual/super pervert"/>
 	</Character>
 </Characters>
 

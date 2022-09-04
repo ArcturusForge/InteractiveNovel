@@ -12,14 +12,11 @@
 / [number] => Either marks the start of a sequence or points to a sequence depending on usage.
 / [SetBG:bgName] => Changes the in-game bg to a new one.
 
-/ TODO: Should automatically progress to the next scene index if
-/ there are no overriding scene end actions.
-
 [0]
 [SetBG:DayHallway]
 
 [1]
-Kuu; What exactly is it that you are doing right now?; UCNeutral; Center;
+Kuu; What exactly is it that you are doing right now?; UCNeutral;Center;
 Player;
 ^; N-nothing...:[2]
 ^; Just looking:[3]
@@ -30,7 +27,7 @@ Kuu; Yeah sure, and I can see without my glasses.;UCNeutral;Center
 [Play:1]
 
 [3]
-Kuu; Huh?;Casual;Center
+Kuu; Huh?;UCNeutral;Center
 *;At what?;*;*
 Player; At you obviously;
 Kuu; O-oh..; DCBlush; Center

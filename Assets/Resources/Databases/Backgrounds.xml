@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Backgrounds>
+	<!-- When linking graphics do NOT include file extension & start from inside resources folder. -->
+	<!-- <Background Name="" Path=""/> -->
+	<Background Name="DayHallway" Path="Backgrounds/Hallway/entrance_-_brightly_lit"/>
+	<Background Name="NightHallway" Path="Backgrounds/Hallway/entrance_-_dark_night"/>
+</Backgrounds>

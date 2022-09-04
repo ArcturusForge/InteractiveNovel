@@ -2,6 +2,11 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Assembly Detection:
+/// https://forum.unity.com/threads/how-to-get-all-system-relection-assembly-for-all-module-in-unity.806052/#:~:text=You%20can%20use%20%27System.,loaded%20assemblies%20in%20the%20project.
+/// </summary>
+
 namespace Arcturus.InteractiveNovel
 {
     public class SequenceParser : MonoBehaviour
@@ -12,7 +17,7 @@ namespace Arcturus.InteractiveNovel
         private Dictionary<int, DialogueSequence> dialogueSequences;
 
         // Vars used only during file parsing.
-        public static Func<string> OnRequestPlaywright;
+        public static Action OnParsingCompleted;
         private DialogueSequence currentSequence;
         private DialogueLine previousLine;
 
@@ -33,10 +38,11 @@ namespace Arcturus.InteractiveNovel
             dialogueSequences = new Dictionary<int, DialogueSequence>();
         }
 
-        private void Start()
+        private void BeginParsing(string playwrightPath)
         {
-            var playwrightPath = OnRequestPlaywright.Invoke();
-            var playwright = Resources.Load<TextAsset>(playwrightPath).ToString().Replace("; ", ";").Split(new string[2] { "\n", "\r" }, StringSplitOptions.RemoveEmptyEntries);
+            var tAsset = Resources.Load<TextAsset>(playwrightPath).ToString();
+            var cleanedAsset = tAsset.Replace("; ", ";").Replace(": ", ":");
+            var playwright = cleanedAsset.Split(new string[2] { "\n", "\r" }, StringSplitOptions.RemoveEmptyEntries);
 
             if (playwright.Length == 0)
                 Debug.LogWarning("Playwright has no data within");
@@ -64,8 +70,10 @@ namespace Arcturus.InteractiveNovel
 
             currentSequence = null;
             previousLine = null;
+            OnParsingCompleted?.Invoke();
         }
 
+        #region File Parsing
         private void ParseIndexOrCommand(string line)
         {
             if (int.TryParse(line.Replace("[", "").Replace("]", ""), out var index))
@@ -74,10 +82,10 @@ namespace Arcturus.InteractiveNovel
                 dialogueSequences.Add(index, currentSequence);
                 return;
             }
-            else if (line.ToLower().Contains("play"))
+            else
             {
                 if (!line.Contains(";"))
-                    currentSequence.SequenceEndActions.Add(line);
+                    currentSequence.SequenceEndActions.Add(line.Replace("[", "").Replace("]", ""));
                 else
                 {
                     foreach (var splitAction in SplitBySemi(line))
@@ -128,5 +136,29 @@ namespace Arcturus.InteractiveNovel
                     break;
             }
         }
+        #endregion
+
+        #region System Interfacing
+        public static void ParseFile(string playwrightPath)
+        {
+            I.BeginParsing(playwrightPath);
+        }
+
+        public static bool HasSequence(int sequenceIndex)
+        {
+            return I.dialogueSequences.ContainsKey(sequenceIndex);
+        }
+
+        public static DialogueSequence GetSequence(int sequenceIndex)
+        {
+            if (!I.dialogueSequences.ContainsKey(sequenceIndex))
+            {
+                Debug.LogError($"Requesting sequence that does not exist: {sequenceIndex}");
+                return null;
+            }
+
+            return I.dialogueSequences[sequenceIndex];
+        }
+        #endregion
     }
 }
