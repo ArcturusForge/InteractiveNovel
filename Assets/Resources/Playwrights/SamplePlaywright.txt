@@ -16,18 +16,32 @@
 [SetBG:DayHallway]
 
 [1]
-Kuu; What exactly is it that you are doing right now?; UCNeutral;Center;
-Player;
-^; N-nothing...:[2]
-^; Just looking:[3]
+Kuu; ...; DCSmile;Center
+Player; ...
+Kuu; ...; DCNeutral;Center
 
 [2]
-Kuu; Yeah sure, and I can see without my glasses.;UCNeutral;Center
-*; Now then...;*;*
-[Play:1]
+Kuu; What exactly is it that you are doing right now?; UCNeutral;Center;
+Player;
+^; N-nothing...:[3]
+^; Just looking:[4]
 
 [3]
+Player; Huh!? Oh nothing...
+Kuu; Yeah sure, and I can see without my glasses.;UCNeutral;Center
+*; ... Wait did you seriously think I would believe that?;DCPissed;*
+*; Now then...;UCPissed;*
+[Play:2]
+
+[4]
+Player; Hmm me?
+*; I'm just looking.
 Kuu; Huh?;UCNeutral;Center
-*;At what?;*;*
-Player; At you obviously;
+*;Looking?.. At what?;*;*
+Player; Well, I'm looking at you mostly.
 Kuu; O-oh..; DCBlush; Center
+
+[5]
+Kuu; Well that's all there is in this demo so until more content comes out I will be here, stuck repeating this same sequence forever...;DCNeutral;Center
+*; Come visit again won't you?;UCSmile;*
+[Play:1]
