@@ -13,11 +13,11 @@
 / [SetBG:bgName] => Changes the in-game bg to a new one.
 
 [0]
-[SetBG:DayHallway]
+ [SetBG:DayHallway]
 
 [1]
 Kuu; ...; DCSmile;Center
-Player; ...
+   Player; ...
 Kuu; ...; DCNeutral;Center
 
 [2]

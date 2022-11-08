@@ -1,0 +1,14 @@
+Key:
+-  <= Incomplete.
+-/ <= Complete.
+^  <= Explanation for above.
+
+ToDo:
+
+General =>
+- Generate Character Positions.
+- Integrate character voices.
+
+Polish =>
+- Dialogue Typing.
+- Dialogue Typing Commands.

@@ -47,8 +47,24 @@ namespace Arcturus.InteractiveNovel
             if (playwright.Length == 0)
                 Debug.LogWarning("Playwright has no data within");
 
-            foreach (var line in playwright)
+            foreach (var playLine in playwright)
             {
+                var line = playLine;
+
+                // Remove whitespace until the the first char is a symbol/letter.
+                if (playLine[0] == ' ')
+                {
+                    int letterCount = 0;
+                    foreach (var letter in playLine)
+                    {
+                        if (letter == ' ')
+                            letterCount++;
+                        else
+                            break;
+                    }
+                    line = playLine.Remove(0, letterCount);
+                }
+
                 switch (line[0])
                 {
                     case '/': // Skips comments in text file.
